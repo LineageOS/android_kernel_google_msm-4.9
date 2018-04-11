@@ -342,6 +342,11 @@ static unsigned int _ifpc_show(struct adreno_device *adreno_dev)
 	return kgsl_gmu_isenabled(device) && gmu->idle_level >= GPU_HW_IFPC;
 }
 
+static unsigned int _ifpc_count_show(struct adreno_device *adreno_dev)
+{
+	return adreno_dev->ifpc_count;
+}
+
 static unsigned int _preempt_count_show(struct adreno_device *adreno_dev)
 {
 	struct adreno_preemption *preempt = &adreno_dev->preempt;
@@ -477,6 +482,7 @@ static ADRENO_SYSFS_BOOL(preemption);
 static ADRENO_SYSFS_BOOL(hwcg);
 static ADRENO_SYSFS_BOOL(throttling);
 static ADRENO_SYSFS_BOOL(ifpc);
+static ADRENO_SYSFS_RO_U32(ifpc_count);
 static ADRENO_SYSFS_BOOL(perfcounter);
 
 
@@ -499,6 +505,7 @@ static const struct device_attribute *_attr_list[] = {
 	&adreno_attr_usesgmem.attr,
 	&adreno_attr_skipsaverestore.attr,
 	&adreno_attr_ifpc.attr,
+	&adreno_attr_ifpc_count.attr,
 	&adreno_attr_preempt_count.attr,
 	&adreno_attr_perfcounter.attr,
 	NULL,

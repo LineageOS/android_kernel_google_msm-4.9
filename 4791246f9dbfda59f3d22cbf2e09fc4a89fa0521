@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f5cf88b_8f1f8643",
+        "filename": "drivers/devfreq/devfreq.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1285,
+      "author": {
+        "id": 21513
+      },
+      "writtenOn": "2019-11-08T12:47:20Z",
+      "side": 1,
+      "message": "Why changed to 0 here",
+      "revId": "4791246f9dbfda59f3d22cbf2e09fc4a89fa0521",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

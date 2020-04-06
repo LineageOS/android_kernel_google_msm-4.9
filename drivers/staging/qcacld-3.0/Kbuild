@@ -39,7 +39,6 @@ endif
 # Make WLAN as open-source driver by default
 WLAN_OPEN_SOURCE := 1
 
-ifeq ($(KERNEL_BUILD), 0)
 	# Disable BUILD_TAG
 	WLAN_DISABLE_BUILD_TAG := y
 	CONFIG_BUILD_TAG := n
@@ -232,9 +231,6 @@ endif
 
 	# Flag to enable MCC to SCC switch feature
 	CONFIG_MCC_TO_SCC_SWITCH := y
-
-endif
-
 
 # As per target team, build is done as follows:
 # Defconfig : build with default flags

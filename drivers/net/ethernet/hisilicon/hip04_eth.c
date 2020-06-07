@@ -455,9 +455,9 @@ static int hip04_mac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
 	skb_tx_timestamp(skb);
 
 	hip04_set_xmit_desc(priv, phys);
-	priv->tx_head = TX_NEXT(tx_head);
 	count++;
 	netdev_sent_queue(ndev, skb->len);
+	priv->tx_head = TX_NEXT(tx_head);
 
 	stats->tx_bytes += skb->len;
 	stats->tx_packets++;
@@ -953,7 +953,6 @@ static int hip04_remove(struct platform_device *pdev)
 
 	hip04_free_ring(ndev, d);
 	unregister_netdev(ndev);
-	free_irq(ndev->irq, ndev);
 	of_node_put(priv->phy_node);
 	cancel_work_sync(&priv->tx_timeout_task);
 	free_netdev(ndev);

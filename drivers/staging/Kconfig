@@ -112,4 +112,10 @@ source "drivers/staging/s2mpb04/Kconfig"
 
 source "drivers/staging/wlan_mac/Kconfig"
 
+config QCA_CLD_WLAN
+	tristate "Qualcomm Atheros CLD WLAN module"
+	default n
+	help
+	  Add support for the Qualcomm Atheros CLD WLAN module.
+
 endif # STAGING

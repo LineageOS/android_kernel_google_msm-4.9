@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2c633a4_23580fe5",
+        "filename": "include/linux/hw_random.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-07-08T11:34:55Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "86e8c22d_31c344f9",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 89
+      },
+      "revId": "dc953d6a8fde42549f7be01a46da9b3991081b8d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "385daa18_7f1f36a9",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-07-07T19:02:21Z",
       "side": 0,
       "message": "This deletion must have been a result of an incorrect merge conflict resolution. This is added by https://android.googlesource.com/kernel/msm/+/5d8ff1e5983fdfc910d62951d62bb71df883fbbc (only in caf or google\u0027s kernel/msm, not in kernel/common) and required by https://android.googlesource.com/kernel/msm/+/9f27450aff1d66ab3afe31090479e2fd2fcee35c",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 0
+      },
+      "revId": "dc953d6a8fde42549f7be01a46da9b3991081b8d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20e50854_73918a7b",
+        "filename": "include/linux/random.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-07-08T11:34:55Z",
+      "side": 0,
+      "message": "Fixed",
+      "parentUuid": "385daa18_7f1f36a9",
       "range": {
         "startLine": 60,
         "startChar": 0,

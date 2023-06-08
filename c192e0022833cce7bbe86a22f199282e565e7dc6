@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7dcfeaf_a2205d3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7118
+      },
+      "writtenOn": "2023-06-08T07:58:26Z",
+      "side": 1,
+      "message": "this chain fixes low mic volume in phone calls",
+      "revId": "c192e0022833cce7bbe86a22f199282e565e7dc6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

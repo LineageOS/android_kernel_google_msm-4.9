@@ -438,19 +438,20 @@ static void kgsl_sync_fence_callback(struct fence *fence, struct fence_cb *cb)
 	}
 }
 
-static void kgsl_get_fence_names(struct fence *fence,
-	struct event_fence_info *info_ptr)
+void kgsl_get_fence_info(struct kgsl_drawobj_sync_event *event)
 {
 	unsigned int num_fences;
-	struct fence **fences;
+	struct fence *fence, **fences;
 	struct fence_array *array;
+	struct event_fence_info *info_ptr = &event->info;
 	int i;
 
 	if (!info_ptr)
 		return;
 
-	array = to_fence_array(fence);
+	fence = event->handle->fence;
 
+	array = to_fence_array(fence);
 	if (array != NULL) {
 		num_fences = array->num_fences;
 		fences = array->fences;
@@ -485,7 +486,7 @@ static void kgsl_get_fence_names(struct fence *fence,
 }
 
 struct kgsl_sync_fence_cb *kgsl_sync_fence_async_wait(int fd,
-	bool (*func)(void *priv), void *priv, struct event_fence_info *info_ptr)
+	bool (*func)(void *priv), void *priv)
 {
 	struct kgsl_sync_fence_cb *kcb;
 	struct fence *fence;
@@ -505,8 +506,6 @@ struct kgsl_sync_fence_cb *kgsl_sync_fence_async_wait(int fd,
 	kcb->fence = fence;
 	kcb->priv = priv;
 	kcb->func = func;
-
-	kgsl_get_fence_names(fence, info_ptr);
 
 	/* if status then error or signaled */
 	status = fence_add_callback(fence, &kcb->fence_cb,

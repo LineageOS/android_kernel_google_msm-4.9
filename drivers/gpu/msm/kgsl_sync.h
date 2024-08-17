@@ -1,3 +1,4 @@
+
 /* Copyright (c) 2012-2014,2017-2018 The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -91,9 +92,9 @@ void kgsl_sync_timeline_destroy(struct kgsl_context *context);
 
 void kgsl_sync_timeline_put(struct kgsl_sync_timeline *ktimeline);
 
-struct kgsl_sync_fence_cb *kgsl_sync_fence_async_wait(int fd,
-					bool (*func)(void *priv), void *priv,
-					char *fence_name, int name_len);
+struct kgsl_sync_fence_cb *kgsl_sync_fence_async_wait(int fd, bool (*func)(void *priv), void *priv);
+
+void kgsl_get_fence_info(struct kgsl_drawobj_sync_event *event);
 
 void kgsl_sync_fence_async_cancel(struct kgsl_sync_fence_cb *kcb);
 
@@ -137,9 +138,12 @@ static inline void kgsl_sync_timeline_put(struct kgsl_sync_timeline *ktimeline)
 }
 
 
+static inline void kgsl_get_fence_info(struct kgsl_drawobj_sync_event *event)
+{
+}
+
 static inline struct kgsl_sync_fence_cb *kgsl_sync_fence_async_wait(int fd,
-					bool (*func)(void *priv), void *priv,
-					char *fence_name, int name_len)
+	bool (*func)(void *priv), void *priv);
 {
 	return NULL;
 }

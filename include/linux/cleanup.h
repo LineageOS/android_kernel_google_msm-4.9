@@ -83,7 +83,8 @@ static inline class_##_name##_t class_##_name##ext##_constructor(_init_args) \
 { class_##_name##_t t = _init; return t; }
 
 #define CLASS(_name, var)						\
-	class_##_name##_t var __cleanup(class_##_name##_destructor) =	\
+	class_##_name##_t var __maybe_unused				\
+		__cleanup(class_##_name##_destructor) =			\
 		class_##_name##_constructor
 
 
